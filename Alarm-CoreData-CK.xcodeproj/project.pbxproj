@@ -11,6 +11,10 @@
 		0D5F5E552A2BAC4A00D61A2C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5F5E542A2BAC4A00D61A2C /* ContentView.swift */; };
 		0D5F5E572A2BAC4B00D61A2C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D5F5E562A2BAC4B00D61A2C /* Assets.xcassets */; };
 		0D5F5E5A2A2BAC4B00D61A2C /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0D5F5E592A2BAC4B00D61A2C /* Preview Assets.xcassets */; };
+		0D5F5E662A2BAF6000D61A2C /* AlarmDataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0D5F5E642A2BAF6000D61A2C /* AlarmDataModel.xcdatamodeld */; };
+		0D5F5E682A2BBF6F00D61A2C /* Alarm+Ext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5F5E672A2BBF6F00D61A2C /* Alarm+Ext.swift */; };
+		0D5F5E6C2A2BDD0300D61A2C /* AlarmListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5F5E6B2A2BDD0300D61A2C /* AlarmListView.swift */; };
+		0D5F5E6E2A2BDDBB00D61A2C /* AlarmContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0D5F5E6D2A2BDDBB00D61A2C /* AlarmContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +23,10 @@
 		0D5F5E542A2BAC4A00D61A2C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0D5F5E562A2BAC4B00D61A2C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0D5F5E592A2BAC4B00D61A2C /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0D5F5E652A2BAF6000D61A2C /* AlarmDataModel.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = AlarmDataModel.xcdatamodel; sourceTree = "<group>"; };
+		0D5F5E672A2BBF6F00D61A2C /* Alarm+Ext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alarm+Ext.swift"; sourceTree = "<group>"; };
+		0D5F5E6B2A2BDD0300D61A2C /* AlarmListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmListView.swift; sourceTree = "<group>"; };
+		0D5F5E6D2A2BDDBB00D61A2C /* AlarmContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +59,8 @@
 		0D5F5E512A2BAC4A00D61A2C /* Alarm-CoreData-CK */ = {
 			isa = PBXGroup;
 			children = (
+				0D5F5E6A2A2BDCF400D61A2C /* Screens */,
+				0D5F5E632A2BAF3000D61A2C /* CoreData */,
 				0D5F5E522A2BAC4A00D61A2C /* Alarm_CoreData_CKApp.swift */,
 				0D5F5E542A2BAC4A00D61A2C /* ContentView.swift */,
 				0D5F5E562A2BAC4B00D61A2C /* Assets.xcassets */,
@@ -65,6 +75,32 @@
 				0D5F5E592A2BAC4B00D61A2C /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		0D5F5E632A2BAF3000D61A2C /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				0D5F5E642A2BAF6000D61A2C /* AlarmDataModel.xcdatamodeld */,
+				0D5F5E672A2BBF6F00D61A2C /* Alarm+Ext.swift */,
+				0D5F5E6D2A2BDDBB00D61A2C /* AlarmContainer.swift */,
+			);
+			path = CoreData;
+			sourceTree = "<group>";
+		};
+		0D5F5E692A2BDCEC00D61A2C /* AlarmListView */ = {
+			isa = PBXGroup;
+			children = (
+				0D5F5E6B2A2BDD0300D61A2C /* AlarmListView.swift */,
+			);
+			path = AlarmListView;
+			sourceTree = "<group>";
+		};
+		0D5F5E6A2A2BDCF400D61A2C /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				0D5F5E692A2BDCEC00D61A2C /* AlarmListView */,
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,7 +174,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D5F5E552A2BAC4A00D61A2C /* ContentView.swift in Sources */,
+				0D5F5E6E2A2BDDBB00D61A2C /* AlarmContainer.swift in Sources */,
+				0D5F5E6C2A2BDD0300D61A2C /* AlarmListView.swift in Sources */,
 				0D5F5E532A2BAC4A00D61A2C /* Alarm_CoreData_CKApp.swift in Sources */,
+				0D5F5E662A2BAF6000D61A2C /* AlarmDataModel.xcdatamodeld in Sources */,
+				0D5F5E682A2BBF6F00D61A2C /* Alarm+Ext.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +379,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		0D5F5E642A2BAF6000D61A2C /* AlarmDataModel.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0D5F5E652A2BAF6000D61A2C /* AlarmDataModel.xcdatamodel */,
+			);
+			currentVersion = 0D5F5E652A2BAF6000D61A2C /* AlarmDataModel.xcdatamodel */;
+			path = AlarmDataModel.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0D5F5E472A2BAC4A00D61A2C /* Project object */;
 }
