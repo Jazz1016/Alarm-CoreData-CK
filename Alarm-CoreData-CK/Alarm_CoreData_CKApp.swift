@@ -11,7 +11,8 @@ import SwiftUI
 struct Alarm_CoreData_CKApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            AlarmListView()
+                .environment(\.managedObjectContext, AlarmContainer().persistentContainer.viewContext)
         }
     }
 }
