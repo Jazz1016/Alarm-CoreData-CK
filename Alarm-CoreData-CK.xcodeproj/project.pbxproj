@@ -27,6 +27,7 @@
 		0DF3F0FF2A2E55AF00250858 /* Alarm+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF3F0FB2A2E55AF00250858 /* Alarm+CoreDataClass.swift */; };
 		0DF3F1002A2E55AF00250858 /* Alarm+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF3F0FC2A2E55AF00250858 /* Alarm+CoreDataProperties.swift */; };
 		0DF3F1042A2E5BF700250858 /* TimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF3F1032A2E5BF700250858 /* TimePicker.swift */; };
+		0DF3F1072A2E7BDE00250858 /* SoundCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF3F1062A2E7BDE00250858 /* SoundCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		0DF3F0FB2A2E55AF00250858 /* Alarm+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alarm+CoreDataClass.swift"; sourceTree = "<group>"; };
 		0DF3F0FC2A2E55AF00250858 /* Alarm+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alarm+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0DF3F1032A2E5BF700250858 /* TimePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePicker.swift; sourceTree = "<group>"; };
+		0DF3F1062A2E7BDE00250858 /* SoundCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,6 +168,7 @@
 		0DF3F1012A2E5BE700250858 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				0DF3F1052A2E7BD600250858 /* Cells */,
 				0DF3F1022A2E5BEE00250858 /* Pickers */,
 			);
 			path = Views;
@@ -177,6 +180,14 @@
 				0DF3F1032A2E5BF700250858 /* TimePicker.swift */,
 			);
 			path = Pickers;
+			sourceTree = "<group>";
+		};
+		0DF3F1052A2E7BD600250858 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				0DF3F1062A2E7BDE00250858 /* SoundCell.swift */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,6 +266,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D5F5E772A2D15A700D61A2C /* AlarmFormViewModel.swift in Sources */,
+				0DF3F1072A2E7BDE00250858 /* SoundCell.swift in Sources */,
 				0D5F5E6E2A2BDDBB00D61A2C /* AlarmContainer.swift in Sources */,
 				0DF3F0FE2A2E55AF00250858 /* AlarmSchedule+CoreDataProperties.swift in Sources */,
 				0D5F5E752A2D158B00D61A2C /* AlarmFormView.swift in Sources */,

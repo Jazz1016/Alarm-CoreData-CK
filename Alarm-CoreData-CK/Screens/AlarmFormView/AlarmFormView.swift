@@ -12,12 +12,19 @@ struct AlarmFormView: View {
     @FetchRequest(sortDescriptors: [])
     private var alarms: FetchedResults<Alarm>
     @Environment(\.managedObjectContext) var moc
-    @State var title: String = ""
-    @State var sound: String = "chime"
-    @State var date = Date()
-    @State var hour = 0
-    @State var minute = 0
-    @State var isPM = false
+    @Environment(\.dismiss) var dismiss
+    @State var title: String    = ""
+    @State var sound: String    = ""
+    @State var date             = Date()
+    @State var hour             = 0
+    @State var minute           = 0
+    @State var isPM             = false
+    let soundsArr               = ["chime", "correct_bell", "doorbell", "goat_bell", "shop_door"]
+    
+    var isValidForm: Bool {
+        guard !title.isEmpty, !sound.isEmpty else { return false }
+        return true
+    }
     
     
     var body: some View {
@@ -30,37 +37,60 @@ struct AlarmFormView: View {
                     
                     //Need to pass bindings in
                     TimePickerView(selectedHour: $hour, selectedMinute: $minute, isPM: $isPM)
-                    
-                    Button() {
+                }
+                Section(header: Text("Select Sound")) {
+                    ForEach(soundsArr, id: \.self) { soundName in
+                        SoundCell(soundString: soundName, isSelected: soundName == sound)
+                            .onTapGesture {
+                                sound = soundName
+                            }
+                    }
+                }
+                Button() {
+                    createAlarm()
+                } label: {
+                    Text("Save Alarm")
+                }
+                .buttonStyle(.bordered)
+            }
+            .toolbar {
+                ToolbarItem(placement: .navigationBarLeading) {
+                    Button {
+                        dismiss()
+                    } label: {
+                        Text("Cancel")
+                    }
+                }
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
                         createAlarm()
                     } label: {
-                        Text("Save Alarm")
+                        Text("Save")
                     }
-                    .buttonStyle(.bordered)
-                }
-                Section("Select Sound") {
-                    
-                    HStack {
-                        Spacer()
-                        Text("chime")
-                        Spacer()
-                        Image(systemName: "play")
-                            .foregroundColor(.blue)
-                    }
-                    
-                    Text("correct_bell")
-                    Text("doorbell")
-                    Text("goat_bell")
-                    Text("shop_door")
                 }
             }
         }
     }
     
     func createAlarm() {
+        guard isValidForm else { return }
         let newAlarm = Alarm(context: moc)
         newAlarm.id = UUID().uuidString
+        newAlarm.title = title
         newAlarm.sound = sound
+        let alarmDate = createDate(hour: isPM ? hour + 12 : hour, minute: minute, date: date)
+        newAlarm.schedule?.alarmTime = alarmDate
+        newAlarm.schedule?.selectedDays = [alarmDate] as NSObject
+        try? moc.save()
+    }
+    
+    func createDate(hour: Int, minute: Int, date: Date) -> Date? {
+        let calendar = Calendar.current
+        var dateComponents = calendar.dateComponents([.year, .month, .day], from: date)
+        dateComponents.hour = hour
+        dateComponents.minute = minute
+        
+        return calendar.date(from: dateComponents)
     }
     
 }
