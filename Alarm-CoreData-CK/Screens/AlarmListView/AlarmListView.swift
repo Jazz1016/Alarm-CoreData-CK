@@ -8,21 +8,32 @@
 import SwiftUI
 
 struct AlarmListView: View {
+    @FetchRequest(sortDescriptors: [])
+    private var alarms: FetchedResults<Alarm>
+    @State private var formType: FormType?
+    @State var isShowingForm = false
+    
     var body: some View {
         NavigationStack {
             List {
-                
+                ForEach(alarms) { alarm in
+                    Text("\(alarm.titleUnwrapped)")
+                }
             }
         }
         .navigationTitle("Alarms List ⏰")
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
-                    // Add new Alarm
+                    formType = .new
+                    
                 } label: {
                     Image(systemName: "plus")
                 }
             }
+            
+            
+            
         }
     }
 }

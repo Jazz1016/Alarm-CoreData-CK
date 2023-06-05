@@ -23,8 +23,11 @@ enum FormType: Identifiable, View {
     
     
     var body: some View {
-        VStack {
-            
+        switch self {
+        case .new:
+            AlarmFormView(viewModel: AlarmFormViewModel(with: nil))
+        case .update:
+            Text("update not made yet")
         }
     }
 }

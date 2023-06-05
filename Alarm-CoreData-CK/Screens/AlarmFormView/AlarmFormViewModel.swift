@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+class AlarmFormViewModel: ObservableObject {
+    
+    
+    init(with alarm: Alarm?) {
+        
+    }
+}

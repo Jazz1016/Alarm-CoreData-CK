@@ -8,16 +8,19 @@
 import SwiftUI
 
 struct AlarmFormView: View {
+    @ObservedObject var viewModel: AlarmFormViewModel
     @State var name: String = ""
     @State var audioName: String = ""
     
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        Form {
+            
+        }
     }
 }
 
 struct AlarmFormView_Previews: PreviewProvider {
     static var previews: some View {
-        AlarmFormView()
+        AlarmFormView(viewModel: AlarmFormViewModel(with: nil))
     }
 }
