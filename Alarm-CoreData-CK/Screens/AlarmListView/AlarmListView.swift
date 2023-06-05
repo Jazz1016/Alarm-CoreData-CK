@@ -17,24 +17,25 @@ struct AlarmListView: View {
         NavigationStack {
             List {
                 ForEach(alarms) { alarm in
-                    Text("\(alarm.titleUnwrapped)")
+                    Button {
+                        formType = .update
+                    } label: {
+                        Text("\(alarm.titleUnwrapped)")
+                    }
+                }
+            }
+            .navigationTitle("⏰ Alarms List")
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        formType = .new
+                    } label: {
+                        Image(systemName: "plus")
+                    }
                 }
             }
         }
-        .navigationTitle("Alarms List ⏰")
-        .toolbar {
-            ToolbarItem(placement: .navigationBarTrailing) {
-                Button {
-                    formType = .new
-                    
-                } label: {
-                    Image(systemName: "plus")
-                }
-            }
-            
-            
-            
-        }
+        .sheet(item: $formType) { $0 }
     }
 }
 

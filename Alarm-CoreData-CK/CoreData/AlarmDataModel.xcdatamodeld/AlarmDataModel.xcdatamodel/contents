@@ -1,8 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22E261" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <entity name="Alarm" representedClassName="Alarm" syncable="YES" codeGenerationType="class">
+    <entity name="Alarm" representedClassName="Alarm" syncable="YES">
         <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" optional="YES" attributeType="String"/>
+        <attribute name="sound" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
+        <relationship name="schedule" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AlarmSchedule" inverseName="schedule" inverseEntity="AlarmSchedule"/>
+    </entity>
+    <entity name="AlarmSchedule" representedClassName="AlarmSchedule" syncable="YES">
+        <attribute name="alarmTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="recurringDays" optional="YES" attributeType="Transformable"/>
+        <attribute name="selectedDays" optional="YES" attributeType="Transformable"/>
+        <relationship name="schedule" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Alarm" inverseName="schedule" inverseEntity="Alarm"/>
     </entity>
 </model>

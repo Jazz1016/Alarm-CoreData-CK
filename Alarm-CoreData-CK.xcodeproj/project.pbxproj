@@ -22,6 +22,11 @@
 		0D5F5E812A2D1C9C00D61A2C /* chime.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0D5F5E7C2A2D1C9C00D61A2C /* chime.mp3 */; };
 		0D5F5E822A2D1C9C00D61A2C /* goat_bell.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0D5F5E7D2A2D1C9C00D61A2C /* goat_bell.mp3 */; };
 		0D5F5E832A2D1C9C00D61A2C /* shop_door.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 0D5F5E7E2A2D1C9C00D61A2C /* shop_door.mp3 */; };
+		0DF3F0FD2A2E55AF00250858 /* AlarmSchedule+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF3F0F92A2E55AF00250858 /* AlarmSchedule+CoreDataClass.swift */; };
+		0DF3F0FE2A2E55AF00250858 /* AlarmSchedule+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF3F0FA2A2E55AF00250858 /* AlarmSchedule+CoreDataProperties.swift */; };
+		0DF3F0FF2A2E55AF00250858 /* Alarm+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF3F0FB2A2E55AF00250858 /* Alarm+CoreDataClass.swift */; };
+		0DF3F1002A2E55AF00250858 /* Alarm+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF3F0FC2A2E55AF00250858 /* Alarm+CoreDataProperties.swift */; };
+		0DF3F1042A2E5BF700250858 /* TimePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF3F1032A2E5BF700250858 /* TimePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -41,6 +46,11 @@
 		0D5F5E7C2A2D1C9C00D61A2C /* chime.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = chime.mp3; sourceTree = "<group>"; };
 		0D5F5E7D2A2D1C9C00D61A2C /* goat_bell.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = goat_bell.mp3; sourceTree = "<group>"; };
 		0D5F5E7E2A2D1C9C00D61A2C /* shop_door.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = shop_door.mp3; sourceTree = "<group>"; };
+		0DF3F0F92A2E55AF00250858 /* AlarmSchedule+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlarmSchedule+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0DF3F0FA2A2E55AF00250858 /* AlarmSchedule+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlarmSchedule+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0DF3F0FB2A2E55AF00250858 /* Alarm+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alarm+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0DF3F0FC2A2E55AF00250858 /* Alarm+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alarm+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0DF3F1032A2E5BF700250858 /* TimePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +83,7 @@
 		0D5F5E512A2BAC4A00D61A2C /* Alarm-CoreData-CK */ = {
 			isa = PBXGroup;
 			children = (
+				0DF3F1012A2E5BE700250858 /* Views */,
 				0D5F5E792A2D1C8600D61A2C /* Sounds */,
 				0D5F5E6A2A2BDCF400D61A2C /* Screens */,
 				0D5F5E632A2BAF3000D61A2C /* CoreData */,
@@ -94,8 +105,8 @@
 		0D5F5E632A2BAF3000D61A2C /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				0DF3F0F02A2E4C1F00250858 /* Model */,
 				0D5F5E642A2BAF6000D61A2C /* AlarmDataModel.xcdatamodeld */,
-				0D5F5E672A2BBF6F00D61A2C /* Alarm+Ext.swift */,
 				0D5F5E6D2A2BDDBB00D61A2C /* AlarmContainer.swift */,
 			);
 			path = CoreData;
@@ -138,6 +149,34 @@
 				0D5F5E7E2A2D1C9C00D61A2C /* shop_door.mp3 */,
 			);
 			path = Sounds;
+			sourceTree = "<group>";
+		};
+		0DF3F0F02A2E4C1F00250858 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0DF3F0F92A2E55AF00250858 /* AlarmSchedule+CoreDataClass.swift */,
+				0DF3F0FA2A2E55AF00250858 /* AlarmSchedule+CoreDataProperties.swift */,
+				0DF3F0FB2A2E55AF00250858 /* Alarm+CoreDataClass.swift */,
+				0DF3F0FC2A2E55AF00250858 /* Alarm+CoreDataProperties.swift */,
+				0D5F5E672A2BBF6F00D61A2C /* Alarm+Ext.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0DF3F1012A2E5BE700250858 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				0DF3F1022A2E5BEE00250858 /* Pickers */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		0DF3F1022A2E5BEE00250858 /* Pickers */ = {
+			isa = PBXGroup;
+			children = (
+				0DF3F1032A2E5BF700250858 /* TimePicker.swift */,
+			);
+			path = Pickers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -217,10 +256,15 @@
 			files = (
 				0D5F5E772A2D15A700D61A2C /* AlarmFormViewModel.swift in Sources */,
 				0D5F5E6E2A2BDDBB00D61A2C /* AlarmContainer.swift in Sources */,
+				0DF3F0FE2A2E55AF00250858 /* AlarmSchedule+CoreDataProperties.swift in Sources */,
 				0D5F5E752A2D158B00D61A2C /* AlarmFormView.swift in Sources */,
 				0D5F5E6C2A2BDD0300D61A2C /* AlarmListView.swift in Sources */,
+				0DF3F1002A2E55AF00250858 /* Alarm+CoreDataProperties.swift in Sources */,
 				0D5F5E532A2BAC4A00D61A2C /* Alarm_CoreData_CKApp.swift in Sources */,
 				0D5F5E662A2BAF6000D61A2C /* AlarmDataModel.xcdatamodeld in Sources */,
+				0DF3F0FF2A2E55AF00250858 /* Alarm+CoreDataClass.swift in Sources */,
+				0DF3F0FD2A2E55AF00250858 /* AlarmSchedule+CoreDataClass.swift in Sources */,
+				0DF3F1042A2E5BF700250858 /* TimePicker.swift in Sources */,
 				0D5F5E732A2D157C00D61A2C /* FormType.swift in Sources */,
 				0D5F5E682A2BBF6F00D61A2C /* Alarm+Ext.swift in Sources */,
 			);
