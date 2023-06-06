@@ -2,7 +2,7 @@
 //  Alarm+CoreDataProperties.swift
 //  Alarm-CoreData-CK
 //
-//  Created by James Lea on 6/5/23.
+//  Created by James Lea on 6/6/23.
 //
 //
 
@@ -16,10 +16,9 @@ extension Alarm {
         return NSFetchRequest<Alarm>(entityName: "Alarm")
     }
 
-    @NSManaged public var date: Date?
     @NSManaged public var id: String?
-    @NSManaged public var title: String?
     @NSManaged public var sound: String?
+    @NSManaged public var title: String?
     @NSManaged public var schedule: AlarmSchedule?
 
 }

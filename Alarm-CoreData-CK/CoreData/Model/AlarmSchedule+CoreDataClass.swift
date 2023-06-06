@@ -2,7 +2,7 @@
 //  AlarmSchedule+CoreDataClass.swift
 //  Alarm-CoreData-CK
 //
-//  Created by James Lea on 6/5/23.
+//  Created by James Lea on 6/6/23.
 //
 //
 

@@ -18,7 +18,7 @@ struct AlarmListView: View {
             List {
                 ForEach(alarms) { alarm in
                     Button {
-                        formType = .update
+                        formType = .update(alarm: alarm)
                     } label: {
                         Text("\(alarm.titleUnwrapped)")
                     }

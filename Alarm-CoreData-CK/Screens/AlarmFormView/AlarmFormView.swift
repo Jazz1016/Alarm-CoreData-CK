@@ -11,48 +11,29 @@ struct AlarmFormView: View {
     @ObservedObject var viewModel: AlarmFormViewModel
     @FetchRequest(sortDescriptors: [])
     private var alarms: FetchedResults<Alarm>
-    @Environment(\.managedObjectContext) var moc
     @Environment(\.dismiss) var dismiss
-    @State var title: String    = ""
-    @State var sound: String    = ""
-    @State var date             = Date()
-    @State var hour             = 0
-    @State var minute           = 0
-    @State var isPM             = false
-    let soundsArr               = ["chime", "correct_bell", "doorbell", "goat_bell", "shop_door"]
-    
-    var isValidForm: Bool {
-        guard !title.isEmpty, !sound.isEmpty else { return false }
-        return true
-    }
-    
+    @Environment(\.managedObjectContext) var moc
     
     var body: some View {
         NavigationStack {
             Form {
                 Section {
-                    TextField("Alarm Title", text: $title)
+                    TextField("Alarm Title", text: $viewModel.title)
                     
-                    DatePicker("Select Date", selection: $date, displayedComponents: .date)
+                    DatePicker("Select Date", selection: $viewModel.date, displayedComponents: .date)
                     
-                    //Need to pass bindings in
-                    TimePickerView(selectedHour: $hour, selectedMinute: $minute, isPM: $isPM)
+                    TimePickerView(selectedHour: $viewModel.hour, selectedMinute: $viewModel.minute, isPM: $viewModel.isPM)
                 }
                 Section(header: Text("Select Sound")) {
-                    ForEach(soundsArr, id: \.self) { soundName in
-                        SoundCell(soundString: soundName, isSelected: soundName == sound)
+                    ForEach(viewModel.soundsArr, id: \.self) { soundName in
+                        SoundCell(soundString: soundName, isSelected: soundName == viewModel.sound)
                             .onTapGesture {
-                                sound = soundName
+                                viewModel.sound = soundName
                             }
                     }
                 }
-                Button() {
-                    createAlarm()
-                } label: {
-                    Text("Save Alarm")
-                }
-                .buttonStyle(.bordered)
             }
+            .navigationTitle(viewModel.updating ? "Update Alarm" : "Create Alarm")
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button {
@@ -63,7 +44,11 @@ struct AlarmFormView: View {
                 }
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
-                        createAlarm()
+                        if viewModel.updating {
+                            
+                        } else {
+                            createAlarm()
+                        }
                     } label: {
                         Text("Save")
                     }
@@ -73,30 +58,32 @@ struct AlarmFormView: View {
     }
     
     func createAlarm() {
-        guard isValidForm else { return }
+        guard viewModel.isValidForm else { return }
         let newAlarm = Alarm(context: moc)
-        newAlarm.id = UUID().uuidString
-        newAlarm.title = title
-        newAlarm.sound = sound
-        let alarmDate = createDate(hour: isPM ? hour + 12 : hour, minute: minute, date: date)
-        newAlarm.schedule?.alarmTime = alarmDate
-        newAlarm.schedule?.selectedDays = [alarmDate] as NSObject
+        newAlarm.id = viewModel.id
+        newAlarm.title = viewModel.title
+        newAlarm.sound = viewModel.sound
+        let alarmDate = viewModel.createDate(hour: viewModel.isPM ? viewModel.hour + 12 : viewModel.hour, minute: viewModel.minute, date: viewModel.date)
+        let schedule = AlarmSchedule(context: moc)
+        schedule.alarmTime = alarmDate
+        schedule.selectedDates = NSArray(array: [alarmDate!])
+        newAlarm.schedule = schedule
         try? moc.save()
+        dismiss()
     }
     
-    func createDate(hour: Int, minute: Int, date: Date) -> Date? {
-        let calendar = Calendar.current
-        var dateComponents = calendar.dateComponents([.year, .month, .day], from: date)
-        dateComponents.hour = hour
-        dateComponents.minute = minute
+    func updateAlarm() {
+        guard viewModel.isValidForm else { return }
+        if let selectedAlarm = alarms.first(where: {$0.id == viewModel.id}) {
+            
+        }
         
-        return calendar.date(from: dateComponents)
     }
     
 }
 
 struct AlarmFormView_Previews: PreviewProvider {
     static var previews: some View {
-        AlarmFormView(viewModel: AlarmFormViewModel(with: nil))
+        AlarmFormView(viewModel: AlarmFormViewModel())
     }
 }

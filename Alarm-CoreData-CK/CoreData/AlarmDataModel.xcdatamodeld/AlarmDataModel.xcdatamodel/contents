@@ -1,16 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21754" systemVersion="22E261" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Alarm" representedClassName="Alarm" syncable="YES">
-        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="id" optional="YES" attributeType="String"/>
         <attribute name="sound" optional="YES" attributeType="String"/>
         <attribute name="title" optional="YES" attributeType="String"/>
-        <relationship name="schedule" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AlarmSchedule" inverseName="schedule" inverseEntity="AlarmSchedule"/>
+        <relationship name="schedule" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AlarmSchedule"/>
     </entity>
     <entity name="AlarmSchedule" representedClassName="AlarmSchedule" syncable="YES">
         <attribute name="alarmTime" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="recurringDays" optional="YES" attributeType="Transformable"/>
-        <attribute name="selectedDays" optional="YES" attributeType="Transformable"/>
-        <relationship name="schedule" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Alarm" inverseName="schedule" inverseEntity="Alarm"/>
+        <attribute name="selectedDates" optional="YES" attributeType="Transformable" customClassName="NSArray"/>
+        <relationship name="reucurringDays" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Weekday"/>
+    </entity>
+    <entity name="Weekday" representedClassName="Weekday" syncable="YES">
+        <attribute name="day" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="reucurringDays" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AlarmSchedule"/>
     </entity>
 </model>

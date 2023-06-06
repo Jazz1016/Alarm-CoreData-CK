@@ -12,7 +12,11 @@ extension Alarm {
         title ?? ""
     }
     
-    var audioID: String {
+    var audioLocation: String {
+        sound ?? ""
+    }
+    
+    var idUnwrapped: String {
         id ?? ""
     }
 }

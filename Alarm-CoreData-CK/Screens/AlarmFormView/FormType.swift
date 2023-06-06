@@ -10,7 +10,7 @@ import SwiftUI
 enum FormType: Identifiable, View {
     
     case new
-    case update
+    case update(alarm: Alarm)
     
     var id: String {
         switch self {
@@ -25,9 +25,9 @@ enum FormType: Identifiable, View {
     var body: some View {
         switch self {
         case .new:
-            AlarmFormView(viewModel: AlarmFormViewModel(with: nil))
-        case .update:
-            Text("update not made yet")
+            AlarmFormView(viewModel: AlarmFormViewModel())
+        case .update(alarm: let alarm):
+            AlarmFormView(viewModel: AlarmFormViewModel(with: alarm))
         }
     }
 }
