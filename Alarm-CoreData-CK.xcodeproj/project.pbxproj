@@ -31,6 +31,7 @@
 		0DF3F1202A2F918800250858 /* AlarmSchedule+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF3F11A2A2F918800250858 /* AlarmSchedule+CoreDataProperties.swift */; };
 		0DF3F1212A2F918800250858 /* Alarm+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF3F11B2A2F918800250858 /* Alarm+CoreDataClass.swift */; };
 		0DF3F1222A2F918800250858 /* Alarm+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF3F11C2A2F918800250858 /* Alarm+CoreDataProperties.swift */; };
+		0DF3F1242A2FA5C500250858 /* PlaySound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF3F1232A2FA5C500250858 /* PlaySound.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		0DF3F11A2A2F918800250858 /* AlarmSchedule+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AlarmSchedule+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0DF3F11B2A2F918800250858 /* Alarm+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alarm+CoreDataClass.swift"; sourceTree = "<group>"; };
 		0DF3F11C2A2F918800250858 /* Alarm+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alarm+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0DF3F1232A2FA5C500250858 /* PlaySound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySound.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -203,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				0DF3F1092A2F857700250858 /* Helpers.swift */,
+				0DF3F1232A2FA5C500250858 /* PlaySound.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -283,6 +286,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0D5F5E772A2D15A700D61A2C /* AlarmFormViewModel.swift in Sources */,
+				0DF3F1242A2FA5C500250858 /* PlaySound.swift in Sources */,
 				0DF3F1072A2E7BDE00250858 /* SoundCell.swift in Sources */,
 				0D5F5E6E2A2BDDBB00D61A2C /* AlarmContainer.swift in Sources */,
 				0D5F5E752A2D158B00D61A2C /* AlarmFormView.swift in Sources */,
@@ -355,7 +359,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -409,7 +413,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

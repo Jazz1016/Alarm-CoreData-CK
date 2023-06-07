@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct SoundCell: View {
+    
     let soundString: String
     var isSelected = false
     
@@ -32,6 +33,9 @@ struct SoundCell: View {
                         .frame(width: 12, height: 12)
                         .foregroundColor(.white)
                 }
+                .onTapGesture {
+                    PlaySound.playSound(key: soundString)
+                }
             }
         }
         .padding(8)
@@ -42,6 +46,9 @@ struct SoundCell: View {
                 .stroke(isSelected ? Color.blue : Color.clear, lineWidth: 2)
         )
     }
+    
+    
+    
 }
 
 struct SoundCell_Previews: PreviewProvider {
@@ -49,3 +56,4 @@ struct SoundCell_Previews: PreviewProvider {
         SoundCell(soundString: "chime")
     }
 }
+

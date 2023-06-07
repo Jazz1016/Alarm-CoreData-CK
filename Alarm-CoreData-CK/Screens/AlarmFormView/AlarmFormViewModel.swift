@@ -47,8 +47,6 @@ class AlarmFormViewModel: ObservableObject {
             }
             self.minute = min
             }
-        
-        print("goyslop")
     }
     
     func createDate(hour: Int, minute: Int, date: Date) -> Date? {

@@ -56,7 +56,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "5EE17498-6407-4B39-9A76-6F7B5B11B8BC"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Alarm-CoreData-CK/Screens/AlarmFormView/AlarmFormView.swift"
@@ -66,22 +66,38 @@
             endingLineNumber = "61"
             landmarkName = "createAlarm()"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "CD8B2FA6-EE95-4343-B0A6-744B27192969"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Alarm-CoreData-CK/Screens/AlarmFormView/AlarmFormViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "50"
-            endingLineNumber = "50"
-            landmarkName = "init(with:)"
-            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "5EE17498-6407-4B39-9A76-6F7B5B11B8BC - 84c4fb255c27fdf6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Alarm_CoreData_CK.AlarmFormView.createAlarm() -&gt; ()"
+                  moduleName = "Alarm-CoreData-CK"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jameslea/Desktop/Code/Swift/Alarm-CoreData-CK/Alarm-CoreData-CK/Screens/AlarmFormView/AlarmFormView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
+                  offsetFromSymbolStart = "792">
+               </Location>
+               <Location
+                  uuid = "5EE17498-6407-4B39-9A76-6F7B5B11B8BC - 84c4fb255c27fdf6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Alarm_CoreData_CK.AlarmFormView.createAlarm() -&gt; ()"
+                  moduleName = "Alarm-CoreData-CK"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/jameslea/Desktop/Code/Swift/Alarm-CoreData-CK/Alarm-CoreData-CK/Screens/AlarmFormView/AlarmFormView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "61"
+                  endingLineNumber = "61"
+                  offsetFromSymbolStart = "432">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -97,6 +113,38 @@
             startingLineNumber = "41"
             endingLineNumber = "41"
             landmarkName = "init(with:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "512121BB-2A6F-43B8-B431-3631B196334D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Alarm-CoreData-CK/Screens/AlarmFormView/AlarmFormView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "78"
+            endingLineNumber = "78"
+            landmarkName = "updateAlarm()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "FAC14805-D061-47CC-AF88-1BD82B9A9BA7"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Alarm-CoreData-CK/Screens/AlarmFormView/AlarmFormView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "76"
+            endingLineNumber = "76"
+            landmarkName = "updateAlarm()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

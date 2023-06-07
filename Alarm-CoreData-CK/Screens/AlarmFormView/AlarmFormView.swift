@@ -45,7 +45,7 @@ struct AlarmFormView: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
                         if viewModel.updating {
-                            
+                            updateAlarm()
                         } else {
                             createAlarm()
                         }
@@ -75,9 +75,14 @@ struct AlarmFormView: View {
     func updateAlarm() {
         guard viewModel.isValidForm else { return }
         if let selectedAlarm = alarms.first(where: {$0.id == viewModel.id}) {
-            
+            selectedAlarm.title = viewModel.title
+            selectedAlarm.sound = viewModel.sound
+            let alarmDate = viewModel.createDate(hour: viewModel.isPM ? viewModel.hour + 12 : viewModel.hour, minute: viewModel.minute, date: viewModel.date)
+            let schedule = selectedAlarm.schedule
+            schedule?.alarmTime = alarmDate
+            try? moc.save()
+            dismiss()
         }
-        
     }
     
 }
