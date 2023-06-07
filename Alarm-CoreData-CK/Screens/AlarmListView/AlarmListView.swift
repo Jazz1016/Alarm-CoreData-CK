@@ -17,7 +17,7 @@ struct AlarmListView: View {
     var body: some View {
         NavigationStack {
             List {
-                Toggle
+                
                 ForEach(alarms) { alarm in
                     Button {
                         formType = .update(alarm: alarm)

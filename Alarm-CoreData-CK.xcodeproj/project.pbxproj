@@ -32,6 +32,8 @@
 		0DF3F1212A2F918800250858 /* Alarm+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF3F11B2A2F918800250858 /* Alarm+CoreDataClass.swift */; };
 		0DF3F1222A2F918800250858 /* Alarm+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF3F11C2A2F918800250858 /* Alarm+CoreDataProperties.swift */; };
 		0DF3F1242A2FA5C500250858 /* PlaySound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF3F1232A2FA5C500250858 /* PlaySound.swift */; };
+		0DF3F1262A30ECBE00250858 /* NotificationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF3F1252A30ECBE00250858 /* NotificationDelegate.swift */; };
+		0DF3F1292A30EF1800250858 /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF3F1282A30EF1800250858 /* NotificationHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +63,9 @@
 		0DF3F11B2A2F918800250858 /* Alarm+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alarm+CoreDataClass.swift"; sourceTree = "<group>"; };
 		0DF3F11C2A2F918800250858 /* Alarm+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alarm+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0DF3F1232A2FA5C500250858 /* PlaySound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlaySound.swift; sourceTree = "<group>"; };
+		0DF3F1252A30ECBE00250858 /* NotificationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDelegate.swift; sourceTree = "<group>"; };
+		0DF3F1272A30EEC900250858 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		0DF3F1282A30EF1800250858 /* NotificationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +98,7 @@
 		0D5F5E512A2BAC4A00D61A2C /* Alarm-CoreData-CK */ = {
 			isa = PBXGroup;
 			children = (
+				0DF3F1272A30EEC900250858 /* Info.plist */,
 				0DF3F1082A2F856900250858 /* Helpers */,
 				0DF3F1012A2E5BE700250858 /* Views */,
 				0D5F5E792A2D1C8600D61A2C /* Sounds */,
@@ -206,6 +212,8 @@
 			children = (
 				0DF3F1092A2F857700250858 /* Helpers.swift */,
 				0DF3F1232A2FA5C500250858 /* PlaySound.swift */,
+				0DF3F1252A30ECBE00250858 /* NotificationDelegate.swift */,
+				0DF3F1282A30EF1800250858 /* NotificationHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -289,7 +297,9 @@
 				0DF3F1242A2FA5C500250858 /* PlaySound.swift in Sources */,
 				0DF3F1072A2E7BDE00250858 /* SoundCell.swift in Sources */,
 				0D5F5E6E2A2BDDBB00D61A2C /* AlarmContainer.swift in Sources */,
+				0DF3F1262A30ECBE00250858 /* NotificationDelegate.swift in Sources */,
 				0D5F5E752A2D158B00D61A2C /* AlarmFormView.swift in Sources */,
+				0DF3F1292A30EF1800250858 /* NotificationHelper.swift in Sources */,
 				0DF3F11F2A2F918800250858 /* AlarmSchedule+CoreDataClass.swift in Sources */,
 				0DF3F1212A2F918800250858 /* Alarm+CoreDataClass.swift in Sources */,
 				0DF3F11D2A2F918800250858 /* Weekday+CoreDataClass.swift in Sources */,
@@ -434,6 +444,7 @@
 				DEVELOPMENT_TEAM = 5L2PGYP5GB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Alarm-CoreData-CK/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -463,6 +474,7 @@
 				DEVELOPMENT_TEAM = 5L2PGYP5GB;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "Alarm-CoreData-CK/Info.plist";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
