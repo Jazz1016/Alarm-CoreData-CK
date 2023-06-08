@@ -34,8 +34,8 @@
 		0DF3F1242A2FA5C500250858 /* PlaySound.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF3F1232A2FA5C500250858 /* PlaySound.swift */; };
 		0DF3F1262A30ECBE00250858 /* NotificationDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF3F1252A30ECBE00250858 /* NotificationDelegate.swift */; };
 		0DF3F1292A30EF1800250858 /* NotificationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF3F1282A30EF1800250858 /* NotificationHelper.swift */; };
-		0DF3F12B2A32385100250858 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 0DF3F12A2A32385100250858 /* .gitignore */; };
 		0DF3F12F2A32389700250858 /* Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0DF3F12E2A32389700250858 /* Keys.swift */; };
+		0DF3F1312A3239E700250858 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 0DF3F1302A3239E700250858 /* .gitignore */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -68,8 +68,8 @@
 		0DF3F1252A30ECBE00250858 /* NotificationDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDelegate.swift; sourceTree = "<group>"; };
 		0DF3F1272A30EEC900250858 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		0DF3F1282A30EF1800250858 /* NotificationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHelper.swift; sourceTree = "<group>"; };
-		0DF3F12A2A32385100250858 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		0DF3F12E2A32389700250858 /* Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keys.swift; sourceTree = "<group>"; };
+		0DF3F1302A3239E700250858 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,7 +86,7 @@
 		0D5F5E462A2BAC4A00D61A2C = {
 			isa = PBXGroup;
 			children = (
-				0DF3F12A2A32385100250858 /* .gitignore */,
+				0DF3F1302A3239E700250858 /* .gitignore */,
 				0D5F5E512A2BAC4A00D61A2C /* Alarm-CoreData-CK */,
 				0D5F5E502A2BAC4A00D61A2C /* Products */,
 			);
@@ -282,7 +282,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0DF3F12B2A32385100250858 /* .gitignore in Resources */,
+				0DF3F1312A3239E700250858 /* .gitignore in Resources */,
 				0D5F5E5A2A2BAC4B00D61A2C /* Preview Assets.xcassets in Resources */,
 				0D5F5E572A2BAC4B00D61A2C /* Assets.xcassets in Resources */,
 				0D5F5E832A2D1C9C00D61A2C /* shop_door.mp3 in Resources */,
