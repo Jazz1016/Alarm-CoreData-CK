@@ -86,6 +86,7 @@
 		0D5F5E462A2BAC4A00D61A2C = {
 			isa = PBXGroup;
 			children = (
+				0DF3F12A2A32385100250858 /* .gitignore */,
 				0D5F5E512A2BAC4A00D61A2C /* Alarm-CoreData-CK */,
 				0D5F5E502A2BAC4A00D61A2C /* Products */,
 			);
@@ -102,7 +103,6 @@
 		0D5F5E512A2BAC4A00D61A2C /* Alarm-CoreData-CK */ = {
 			isa = PBXGroup;
 			children = (
-				0DF3F12A2A32385100250858 /* .gitignore */,
 				0DF3F1272A30EEC900250858 /* Info.plist */,
 				0DF3F1082A2F856900250858 /* Helpers */,
 				0DF3F1012A2E5BE700250858 /* Views */,
