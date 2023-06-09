@@ -110,8 +110,8 @@
             filePath = "Alarm-CoreData-CK/Screens/AlarmFormView/AlarmFormViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
+            startingLineNumber = "62"
+            endingLineNumber = "62"
             landmarkName = "init(with:)"
             landmarkType = "7">
          </BreakpointContent>

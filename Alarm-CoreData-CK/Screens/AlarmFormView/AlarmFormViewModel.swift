@@ -7,6 +7,27 @@
 
 import SwiftUI
 import CoreData
+import UserNotifications
+
+enum NotificationAction: String {
+    case dismiss
+    case reminder
+}
+
+enum NotificationCategory: String {
+    case general
+}
+
+class NotificationDelegate: NSObject, UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        
+    }
+    
+}
 
 class AlarmFormViewModel: ObservableObject {
     @FetchRequest(sortDescriptors: [])
@@ -58,6 +79,43 @@ class AlarmFormViewModel: ObservableObject {
         return calendar.date(from: dateComponents)
     }
     
+    func createNotification() {
+        let center = UNUserNotificationCenter.current()
+        
+        // Create content
+        let content = UNMutableNotificationContent()
+        let soundName = UNNotificationSoundName("\(sound).mp3")
+        let sound = UNNotificationSound(named: soundName)
+        content.title = "Hot Coffee"
+        content.body = "Your delicious coffee is ready!"
+        content.categoryIdentifier = NotificationCategory.general.rawValue
+        content.sound = sound
+        // Create trigger
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5.0, repeats: false)
+        
+        
+        // Create request
+        let request = UNNotificationRequest(identifier: "goy", content: content, trigger: trigger)
+        
+        let dismissAction = UNNotificationAction(identifier: NotificationAction.dismiss.rawValue, title: "Dismiss", options: [])
+        
+        let reminderAction = UNNotificationAction(identifier: NotificationAction.reminder.rawValue, title: "Reminder", options: [])
+        
+        let generalCategory = UNNotificationCategory(identifier: NotificationCategory.general.rawValue, actions: [dismissAction, reminderAction], intentIdentifiers: [], options: [])
+        
+        // Set notification categories
+        center.setNotificationCategories([generalCategory])
+        
+        center.add(request) { error in
+            if let error = error {
+                print(error)
+            }
+        }
+        
+    }
     
+    func editNotification() {
+        
+    }
     
 }
