@@ -10,16 +10,13 @@ import UserNotifications
 
 class NotificationHelper {
     
-    static func createAlarm(date: Date, hour: Int, minute: Int) {
+    static func createAlarm(identifier: String, date: Date, hour: Int, minute: Int) {
         let center = UNUserNotificationCenter.current()
 
         // Create content
         let content = UNMutableNotificationContent()
         content.title = "Alarm"
         content.body = "Time to wake up!"
-        
-        // Generate a unique identifier for this alarm
-        let identifier = UUID().uuidString
         
         // Create trigger
         var dateComponents = Calendar.current.dateComponents([.year, .month, .day, .hour, .minute], from: date)
@@ -38,6 +35,17 @@ class NotificationHelper {
                 print("Alarm scheduled successfully with identifier: \(identifier)")
             }
         }
+    }
+    
+    static func deleteNotification(identifier: String) {
+        let center = UNUserNotificationCenter.current()
+        
+        // Remove the notification request with the specified identifier
+        center.removePendingNotificationRequests(withIdentifiers: [identifier])
+    }
+    
+    static func editNotification(identifier: String, alarm: Alarm) {
+        
     }
     
 }

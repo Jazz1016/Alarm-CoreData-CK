@@ -20,11 +20,18 @@ enum NotificationCategory: String {
 
 class NotificationDelegate: NSObject, UNUserNotificationCenterDelegate {
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        
+        let userInfo = response.notification.request.content.userInfo
+        print(userInfo)
+        completionHandler()
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+//        if UIApplication.shared.applicationState == .background || UIApplication.shared.isProtectedDataAvailable == false {
+//            // Check if the app is in the background or the device is locked
+//
+//        }
         
+        completionHandler([.banner, .sound, .badge])
     }
     
 }
@@ -86,16 +93,16 @@ class AlarmFormViewModel: ObservableObject {
         let content = UNMutableNotificationContent()
         let soundName = UNNotificationSoundName("\(sound).mp3")
         let sound = UNNotificationSound(named: soundName)
-        content.title = "Hot Coffee"
-        content.body = "Your delicious coffee is ready!"
+        content.title = "Alarm!"
+        content.body = "ALARM NOTIFICATION ALERT!!!"
         content.categoryIdentifier = NotificationCategory.general.rawValue
         content.sound = sound
+
         // Create trigger
-        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5.0, repeats: false)
-        
+        let trigger = createNotificationTrigger(for: self.date, repeats: false)
         
         // Create request
-        let request = UNNotificationRequest(identifier: "goy", content: content, trigger: trigger)
+        let request = UNNotificationRequest(identifier: id, content: content, trigger: trigger)
         
         let dismissAction = UNNotificationAction(identifier: NotificationAction.dismiss.rawValue, title: "Dismiss", options: [])
         
@@ -114,8 +121,32 @@ class AlarmFormViewModel: ObservableObject {
         
     }
     
+    func createNotificationTrigger(for date: Date, repeats: Bool) -> UNNotificationTrigger? {
+        let calendar = Calendar.current
+        let dateComponents = calendar.dateComponents([.weekday, .hour, .minute], from: date)
+        let weekday = dateComponents.weekday ?? 1  // Default to Sunday if weekday is not available
+
+        var components = DateComponents()
+        components.weekday = weekday
+        components.hour = hour
+        components.minute = minute
+
+        // Calculate the time interval from the current date to the specified date and time
+        guard let nextDate = calendar.nextDate(after: Date(), matching: components, matchingPolicy: .nextTime) else {
+            return nil
+        }
+
+        let timeInterval = nextDate.timeIntervalSinceNow
+
+        // Create the notification trigger with the calculated time interval
+        let trigger = UNTimeIntervalNotificationTrigger(timeInterval: timeInterval, repeats: repeats)
+        print("timeInterval:", timeInterval, "nextDate", nextDate)
+        return trigger
+    }
+    
     func editNotification() {
-        
+        NotificationHelper.deleteNotification(identifier: id)
+        createNotification()
     }
     
 }

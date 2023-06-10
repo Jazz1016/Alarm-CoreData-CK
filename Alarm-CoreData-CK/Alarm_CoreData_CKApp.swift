@@ -21,14 +21,15 @@ struct Alarm_CoreData_CKApp: App {
                 print(error)
             }
         }
-        
         registerBackgroundFetch()
     }
+    
+    let moc = AlarmContainer().persistentCloudKitContainer.viewContext
     
     var body: some Scene {
         WindowGroup {
             AlarmListView()
-                .environment(\.managedObjectContext, AlarmContainer().persistentContainer.viewContext)
+                .environment(\.managedObjectContext, moc)
         }
     }
     

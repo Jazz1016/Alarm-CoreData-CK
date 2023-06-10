@@ -45,6 +45,7 @@ struct AlarmFormView: View {
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button {
                         if viewModel.updating {
+                            viewModel.editNotification()
                             updateAlarm()
                         } else {
                             createAlarm()

@@ -17,7 +17,6 @@ struct AlarmListView: View {
     var body: some View {
         NavigationStack {
             List {
-                
                 ForEach(alarms) { alarm in
                     Button {
                         formType = .update(alarm: alarm)
@@ -27,6 +26,7 @@ struct AlarmListView: View {
                     .swipeActions(edge: .trailing) {
                         Button {
                             deleteAlarm(alarm: alarm)
+                            NotificationHelper.deleteNotification(identifier: alarm.idUnwrapped)
                         } label: {
                             Text("Delete")
                         }

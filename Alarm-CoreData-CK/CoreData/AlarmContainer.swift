@@ -6,13 +6,28 @@
 //
 
 import CoreData
+import CloudKit
 
 class AlarmContainer {
-    let persistentContainer: NSPersistentContainer
+    let persistentCloudKitContainer: NSPersistentCloudKitContainer
     
     init() {
-        persistentContainer = NSPersistentContainer(name: "AlarmDataModel")
-        persistentContainer.loadPersistentStores { _, error in
+        persistentCloudKitContainer = NSPersistentCloudKitContainer(name: "AlarmDataModel")
+        guard let path = persistentCloudKitContainer
+            .persistentStoreDescriptions
+            .first?
+            .url?
+            .path else {
+            fatalError("Could not find peresistent container")
+        }
+        print("Core Data", path)
+        guard let description = persistentCloudKitContainer.persistentStoreDescriptions.first else {
+            fatalError("Failed to initialize persistent container")
+        }
+        description.setOption(true as NSNumber, forKey: NSPersistentHistoryTrackingKey)
+        persistentCloudKitContainer.viewContext.mergePolicy = NSMergeByPropertyObjectTrumpMergePolicy
+        persistentCloudKitContainer.viewContext.automaticallyMergesChangesFromParent = true
+        persistentCloudKitContainer.loadPersistentStores { _, error in
             if let error {
                 print(error.localizedDescription)
             }
