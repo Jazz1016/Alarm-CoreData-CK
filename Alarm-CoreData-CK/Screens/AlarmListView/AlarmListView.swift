@@ -13,10 +13,17 @@ struct AlarmListView: View {
     @Environment(\.managedObjectContext) var moc
     @State private var formType: FormType?
     @State var isShowingForm = false
+    @State var isPlayingWhiteNoise = false
+    
     
     var body: some View {
         NavigationStack {
             List {
+                Toggle("White Noise", isOn: $isPlayingWhiteNoise)
+                    .onChange(of: isPlayingWhiteNoise) { newValue in
+                        toggleWhiteNoise(newValue)
+                    }
+                
                 ForEach(alarms) { alarm in
                     Button {
                         formType = .update(alarm: alarm)
@@ -26,7 +33,6 @@ struct AlarmListView: View {
                     .swipeActions(edge: .trailing) {
                         Button {
                             deleteAlarm(alarm: alarm)
-                            NotificationHelper.deleteNotification(identifier: alarm.idUnwrapped)
                         } label: {
                             Text("Delete")
                         }
@@ -48,8 +54,19 @@ struct AlarmListView: View {
         .sheet(item: $formType) { $0 }
     }
     
+    func toggleWhiteNoise(_ isPlaying: Bool) {
+            if isPlaying {
+                // Start playing the white noise sound on repeat
+                PlaySound.shared.playSoundOnLoop(key: "40_hz", isPlaying: $isPlayingWhiteNoise)
+            } else {
+                // Stop playing the white noise sound
+                PlaySound.shared.stopPlaying()
+            }
+        }
+    
     func deleteAlarm(alarm: Alarm) {
         if let selectedAlarm = alarms.first(where: {$0.id == alarm.id}) {
+            NotificationHelper.deleteNotification(identifier: alarm.idUnwrapped)
             moc.delete(selectedAlarm)
             try? moc.save()
         }

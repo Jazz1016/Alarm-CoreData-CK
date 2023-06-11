@@ -60,6 +60,7 @@ struct AlarmFormView: View {
     
     func createAlarm() {
         guard viewModel.isValidForm else { return }
+        viewModel.createNotification()
         let newAlarm = Alarm(context: moc)
         newAlarm.id = viewModel.id
         newAlarm.title = viewModel.title
@@ -78,6 +79,7 @@ struct AlarmFormView: View {
         if let selectedAlarm = alarms.first(where: {$0.id == viewModel.id}) {
             selectedAlarm.title = viewModel.title
             selectedAlarm.sound = viewModel.sound
+            viewModel.editNotification()
             let alarmDate = viewModel.createDate(hour: viewModel.isPM ? viewModel.hour + 12 : viewModel.hour, minute: viewModel.minute, date: viewModel.date)
             let schedule = selectedAlarm.schedule
             schedule?.alarmTime = alarmDate

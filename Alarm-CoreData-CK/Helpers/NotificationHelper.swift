@@ -39,7 +39,7 @@ class NotificationHelper {
     
     static func deleteNotification(identifier: String) {
         let center = UNUserNotificationCenter.current()
-        
+        print(identifier)
         // Remove the notification request with the specified identifier
         center.removePendingNotificationRequests(withIdentifiers: [identifier])
     }

@@ -34,7 +34,7 @@ struct SoundCell: View {
                         .foregroundColor(.white)
                 }
                 .onTapGesture {
-                    PlaySound.playSound(key: soundString)
+                    PlaySound.shared.playSound(key: soundString)
                 }
             }
         }
