@@ -56,10 +56,9 @@ struct AlarmListView: View {
     
     func toggleWhiteNoise(_ isPlaying: Bool) {
             if isPlaying {
-                // Start playing the white noise sound on repeat
                 PlaySound.shared.playSoundOnLoop(key: "40_hz", isPlaying: $isPlayingWhiteNoise)
+                PlaySound.shared.playBellNoises(intervals: [5.0, 20.0, 35.0])
             } else {
-                // Stop playing the white noise sound
                 PlaySound.shared.stopPlaying()
             }
         }
